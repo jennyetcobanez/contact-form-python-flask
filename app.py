@@ -2,12 +2,14 @@
 import os
 from flask import Flask, render_template, request, redirect
 from flask_mail import Mail, Message
+from api.messages_api import messages_api
 
 from form_contact import ContactForm, csrf
 
 mail = Mail()
 
 app = Flask(__name__)
+app.register_blueprint(messages_api)
 
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
