@@ -1,26 +1,21 @@
-# contact-form-python-flask
-Contact form and send mail with Python and Flask
+## 📡 REST API: Message Management
 
-### Skills
+This project has been enhanced with a REST API that allows full CRUD (Create, Read, Update, Delete) for contact form submissions.
 
-* Python
-* Flask
-* HTML
-* CSS
-* Bootstrap
+### Endpoints
 
+| Method | Endpoint           | Description             |
+|--------|--------------------|-------------------------|
+| GET    | /api/messages      | List all messages       |
+| GET    | /api/messages/<id> | Get one message         |
+| POST   | /api/messages      | Create new message      |
+| PUT    | /api/messages/<id> | Update message          |
+| DELETE | /api/messages/<id> | Delete message          |
 
-```shell
-pip3 install Flask
-pip3 install Flask-WTF
-pip3 install Flask-Mail
-
-cd /contact-form-python-flask
-
-python3 app.py flask run
-
-#run localhost:5000
-
-```
-
-http://gilcierweb.com.br
+### Sample POST Body
+```json
+{
+  "name": "Jenny",
+  "email": "jenny@example.com",
+  "message": "This is a test message."
+}
