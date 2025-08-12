@@ -202,5 +202,30 @@
     </div>
   </div>
 </div>
+<main>
+  <div class="container my-5">
+    <h2 class="mb-4">Submitted Messages</h2>
+
+    {% if messages %}
+      <div class="row">
+        {% for msg in messages %}
+          <div class="col-md-6">
+            <div class="card mb-3 shadow">
+              <div class="card-body">
+                <h5 class="card-title">{{ msg['subject'] }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  From: {{ msg['name'] }} ({{ msg['email'] }})
+                </h6>
+                <p class="card-text">{{ msg['message'] }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No messages submitted yet.</p>
+    {% endif %}
+  </div>
+</main>
 
 {% endblock %}
